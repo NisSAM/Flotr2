@@ -270,7 +270,7 @@ Flotr.addPlugin('spreadsheet', {
     
     // The first row
     _.each(series, function(serie, i){
-      csv += separator+'"'+(serie.label || String.fromCharCode(65+i)).replace(/\"/g, '\\"')+'"';
+      csv += separator+'"'+( (serie.label && serie.label.toString()) || String.fromCharCode(65+i)).replace(/\"/g, '\\"')+'"';
     });
 
     csv += "%0D%0A"; // \r\n
